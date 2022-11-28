@@ -53,7 +53,7 @@ What steps did you take to try and increase model
 
 ### Initial Model Training Run
 
-Accuracy: 
+Accuracy: 72.5%  Loss: 55.9% over 30 epochs
 
 ![]()
 
