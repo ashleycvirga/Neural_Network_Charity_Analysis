@@ -17,11 +17,13 @@ What variable(s) are considered the target(s) for your model?
 
 - 'Is_Successful' is our target variable. We want the nn model to predict which charity applications come from charities that are successful.
 
+![target](Images/target_variable.png)
 
 What variable(s) are considered to be the features for your model?
 
 - 'application_type', 'classification', 'use-case', 'organization', 'income-amt', special_considerations', 'ask_amount' are all factors that help the model weigh their influence on it's ability to predict the success of charity that has applied to the foundation.
 
+![features](Images/features_list.png)
 
 What variable(s) are neither targets nor features, and should be removed from the input data?
 
@@ -31,8 +33,7 @@ What variable(s) are neither targets nor features, and should be removed from th
 
 - the challenge instructions did not include this as a step but I will drop the column in the optimization phase.
 
-![]()
-
+![neither](Images/neither.png)
 
 ### Compiling, Training, and Evaluating the Model
 
@@ -46,63 +47,64 @@ How many neurons, layers, and activation functions did you select for your neura
 
 - The output layer uses a sigmoid activation function because it best represents the shape of a probability function. In this case we want to determine the probability that a charity 'IS_SUCCESSFUL' and thus the sigmoid function is most appropriate here.
 
-![]()
+![OG_params](Images/OG_params.png)
 
 
-What steps did you take to try and increase model 
+## Steps to try to increase model accuracy:
 
 ### Initial Model Training Run
 
 Accuracy: 72.5%  Loss: 55.9% over 30 epochs
 
-![]()
 
+![OG_Accuracy](Images/OG_Accuracy.png)
 
 ### First Optimization Attempt
 
--
+- Removed 'SPECIAL_CONSIDERATIONS' column
 
--
-
--
+![a1 changes](Images/attempt1_changes.png)
 
 Accuracy:
 
-![]()
+![attempt1_accuracy](Images/attempt1_accuracy.png)
 
 ### Second Optimization Attempt
 
--
+- Removed zero value rows in the 'STATUS' column and then dropped the column.
 
--
+- Kept 'SPECIAL_CONSIDERATIONS' column dropped
 
--
+![2 changes](Images/attempt2_changes.png)
 
 Accuracy: 
 
-![]()
+![attempt2_accuracy](Images/attempt2_accuracy.png)
 
 
 ### Third Optimization Attempt
 
--
+- Put 'SPECIAL_CONSIDERATIONS' column back in
 
--
+- Removed zero value rows in the 'STATUS' column and then dropped the column.
 
--
+- increased the number of neurons and hidden layers
+
+![attempt3_params](Images/attempt3_params.png)
 
 Accuracy: 
 
-![]()
+![attempt3_accuracy](Images/attempt3_accuracy.png)
 
 Were you able to achieve the target model performance?
 
-Yes/No, the model was/was not able to achieve the target accuracy of 75%.
+Unfortunately I was not able to achieve the target accuracy of 75%.
 
 
 ## Summary 
 
-Overall, through optimization, the model was able/not able to reach 75% accuracy.
+Overall, through optimization, the model accuracy just seemed to get worse with the changes I made.
+I later realized that I need to add the name column back in but I will not be able to do that all and re-run it in time for this turn in.  I will go back and correct after turn in.
 
 I would recommend the following model revisions for future optimization attempts:
 
